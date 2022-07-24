@@ -1,0 +1,19 @@
+article {
+  max-width: 1050px;
+  letter-spacing: 0.5px;
+  font-size: 22px;
+  margin: auto; 
+}
+
+code {
+  font-family: "Fira Code";
+  letter-spacing: 1px;
+  color: burlywood;
+  background-color: rgb(15, 15, 15);
+  border-radius: 5px;
+  padding: 1px;
+}
+
+p {
+  text-indent: 0.5in;
+}

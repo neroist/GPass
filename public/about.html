@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Code" rel="stylesheet">
+  <link type="image/x-icon" href="../static/favicon.ico" rel="icon">
+  <link href="../static/css/style.css" rel="stylesheet">
+  <link href="../static/css/about.css" rel="stylesheet">
+
+  <title>About - GPass</title>
+</head>
+<body>
+  <article>
+    <h1>About</h1>
+    <p>
+      ___ is a tool for testing the security of a password. ___ provides how many
+      guesses it would take to guarantee to find a password, and the password's 
+      entropy. Enrtopy is defined as "A measure of the disorder or randomness in 
+      a closed system," and is usually expressed in bits. However, in passwords 
+      it means how random or hard to guess the password is. Therefore, the higher 
+      a password's entropy, the more difficult it is for hackers to guess
+    </p>
+
+    <p>
+      To enhance entropy in a password or create a high-entropy password, there
+      are two things you can do. Firstly, increase the length of your 
+      password, as longer passwords have higher entropy. For example, passwords
+      "<code>aabbccdd</code>" and "<code>abcd</code>" have the same bits of 
+      entropy per character, however the first password has more entropy 
+      because it is longer. Secondly, use more unique characters. Entropy is
+      calculated using the number of <em>unique</em> charcters in password,
+      so more unique charcters means higher entropy. Usually in a password,
+      you would want to achieve a score of 60 bits of entropy or more.
+    </p>
+
+    <p>
+      We calculate entropy via Shannon Entropy, which measures bits of entropy per 
+      character of a string (i.e. text). We then use the bits of entropy per 
+      character to find the total entropy of the password and how many gueses it 
+      would take to findthe password, which is just 2<sup><i>bits of entropy</i></sup>.
+    </p>
+
+    <p>
+      However, high entropy does not mean an un-hackable password or a 
+      necessarily "secure" password. For example the passwords 
+      "<code>PAsSWORD123</code>" and "<code>)g^pu>zL3/9</code>" have the 
+      exact same amount of entropy (38.05 bits), but as you can see,
+      the latter password is clearly more secure. So, entopy should 
+      never solely be relied on to tell if a password is secure or not.
+    </p>
+    
+  </article>
+
+  <div id="nav-bar">
+    <a href="/" class="nav-link">Main Page</a>
+    &ensp;—&ensp;
+    <h6 id="love">Made with ❤️ with <a href="https://nim-lang.org">Nim</a></h6>
+  </div>
+  
+</body>
+</html>

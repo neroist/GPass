@@ -1,0 +1,58 @@
+/** Global stylesheet */
+
+/* Variables */
+:root {
+  --anchor-color: #fc0290;
+}
+
+/* --- Anchor style ---*/
+a {
+  position: relative;
+  color: var(--anchor-color);
+  text-decoration: none;
+}
+
+a:hover { color: var(--anchor-color); }
+
+a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--anchor-color); /* Underline color */
+  transform: scaleX(0);
+  /*transform-origin: bottom left;*/
+  transition: transform 350ms ease-out;
+}
+
+a:hover::before { transform: scaleX(1); }
+/* --- Anchor style ---*/
+
+body { 
+  font-family: 'Open Sans'; 
+  text-align: center;
+}
+
+html {
+  color-scheme: dark;
+}
+
+#love, #love > * {
+  color: rgb(120, 120, 120);
+}
+
+#nav-bar {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  height: 60px;
+  width: 100%;
+  background-color: rgb(40, 40, 40);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
