@@ -17,40 +17,42 @@
   <article>
     <h1>About</h1>
     <p>
-      GPass is a tool for testing the security of a password. GPass provides how many
-      guesses it would take to guarantee to find a password, and the password's 
-      entropy. Enrtopy is defined as "A measure of the disorder or randomness in 
-      a closed system," and is usually expressed in bits. However, in passwords 
-      it means how random or hard to guess the password is. Therefore, the higher 
-      a password's entropy, the more difficult it is for hackers to guess
+      GPass is a tool for testing the security of a password. GPass provides 
+      how many guesses it would take to guarantee to find a password and the 
+      password's entropy. Entropy is defined as "A measure of the disorder or 
+      randomness in a closed system," and is usually expressed in bits. 
+      However, in passwords, it means how random or hard to guess the password 
+      is. Therefore, the higher a password's entropy, the more difficult it is 
+      for hackers to guess.
     </p>
 
     <p>
-      To enhance entropy in a password or create a high-entropy password, there
-      are two things you can do. Firstly, increase the length of your 
-      password, as longer passwords have higher entropy. For example, passwords
+      To enhance entropy in a password or create a high-entropy password, there 
+      are two things you can do. Firstly, increase the length of your password, 
+      as longer passwords have higher entropy. For example, the passwords 
       "<code>aabbccdd</code>" and "<code>abcd</code>" have the same bits of 
-      entropy per character, however the first password has more entropy 
-      because it is longer. Secondly, use more unique characters. Entropy is
-      calculated using the number of <em>unique</em> charcters in password,
-      so more unique charcters means higher entropy. Usually in a password,
-      you would want to achieve a score of 60 bits of entropy or more.
+      entropy per character, however, the first password has more entropy 
+      because it is longer. Secondly, use more unique characters. Entropy 
+      is calculated using the number of <em>unique</em> characters in a password, 
+      so more unique characters means higher entropy. Usually, in a 
+      password, you would want to achieve a score of 60 bits of entropy or more.
     </p>
 
     <p>
-      We calculate entropy via Shannon Entropy, which measures bits of entropy per 
-      character of a string (i.e. text). We then use the bits of entropy per 
-      character to find the total entropy of the password and how many gueses it 
-      would take to findthe password, which is just 2<sup><i>bits of entropy</i></sup>.
+      We calculate entropy via Shannon Entropy, which measures bits of entropy 
+      per character of a string (i.e. text). We then use the bits of entropy 
+      per character to find the total entropy of the password and how many 
+      guesses it would take to find the password, which is just
+      2<sup><i>bits of entropy</i></sup>.
     </p>
 
     <p>
       However, high entropy does not mean an un-hackable password or a 
-      necessarily "secure" password. For example the passwords 
-      "<code>PAsSWORD123</code>" and "<code>)g^pu>zL3/9</code>" have the 
-      exact same amount of entropy (38.05 bits), but as you can see,
-      the latter password is clearly more secure. So, entopy should 
-      never solely be relied on to tell if a password is secure or not.
+      necessarily "secure" password. For example, the passwords 
+      "<code>PAsSWORD123</code>" and "<code>)g^pu>zL3/9</code>" have the same 
+      amount of entropy (38.05 bits), but as you can see, the latter password 
+      is clearly more secure. So, entropy should never solely be relied on to 
+      tell if a password is secure or not.
     </p>
     
   </article>
