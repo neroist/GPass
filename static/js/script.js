@@ -1,1 +1,1 @@
-// placeholder for when stropt.nim gets compiled
+// placeholder for when script.nim gets compiled
