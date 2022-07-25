@@ -33,7 +33,7 @@ proc adapt {. exportc .} =
 
   guesses.style.color = if strEntropy >= 55.0:
       cstring "green"
-    elif strEntropy in 45.0..50.9:
+    elif strEntropy in 45.0..54.9:
       cstring "yellowgreen"
     elif strEntropy in 20.0..44.9:
       cstring "yellow"
