@@ -45,9 +45,8 @@ proc adapt {. exportc .} =
   let
     bitSpan = document.getElementById("bits")
 
-
-  bitSpan.innerHTML = if password != "":
-      cstring fmt"{+round(strEntropy, 2)} bits of entropy; {+round(charEntropy, 2)} bits per character"
+  bitSpan.innerHTML = if password != "" and charEntropy != 0.0:
+      cstring fmt"{round(strEntropy, 2)} bits of entropy; {round(charEntropy, 2)} bits per character"
     else:
       cstring "0 bits of entropy; 0 bits per character"
   

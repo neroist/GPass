@@ -6,4 +6,4 @@ license       = "MIT"
 bin           = @["gpass"]
 
 # Dependencies
-requires "nim >= 1.6.0", "prologue >= 0.6.0"
+requires "nim >= 1.3.0", "jester >= 0.5.0"
