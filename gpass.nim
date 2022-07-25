@@ -1,10 +1,12 @@
 import std/[
   strutils,
   with,
+  os
 ]
 
 import prologue
-from prologue/middlewares/staticfile import staticFileMiddleware
+import prologue/middlewares/staticfile
+#import prologue/middlewares/utils
 
 proc home*(ctx: Context) {. async .} =
   await ctx.staticFileResponse("index.html", "public")
@@ -14,19 +16,22 @@ proc about*(ctx: Context) {. async .} =
 
 when isMainModule:
   let 
-    #env       = loadPrologueEnv(".env")
+    env       = loadPrologueEnv(".env")
     settings  = newSettings(
-      appName = "GPass",
-      debug   = false,
-      port    = Port(8080)
+      appName = env.getOrDefault("name", "GPass"),
+      debug   = env.getOrDefault("debug", true),
+      port    = Port env.getOrDefault("port", getEnv("PORT", "5000").parseInt) 
     )
 
   var app = newApp(settings)
 
   with app:
-    use staticFileMiddleware("./static/")
+    #use staticFileMiddleware("./static/", "./public/")
+    #use debugRequestMiddleware()
 
-    get "/", home
-    get "/about", about
+    addRoute "/", home, HttpGet
+    addRoute "/about", about, HttpGet
+
+    get "/favicon.ico", redirectTo "./static/favicon.ico"
 
     run()
