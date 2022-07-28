@@ -6,8 +6,8 @@ import std/[
 ]
 
 router mainrouter:
-  get "/favicon.ico":     
-    sendFile("./static/favicon.ico")
+  # TODO (hopefully) add a custom 418 error page
+
   get "/js/script.js":
     resp readFile("./static/js/script.js"), "text/javascript;charset=utf-8"
 
@@ -15,7 +15,12 @@ router mainrouter:
     cond @"filename" in ["style.css", "index.css", "about.css"]
 
     resp readFile("./static/css/" & @"filename"), "text/css;charset=utf-8"
-  
+
+  get "/icons/favicon.ico":
+    sendFile("./static/icons/favicon.ico")
+  get "/icons/github.png":
+    resp readFile("./static/icons/github.png"), "image/png"
+     
   get "/about":
     sendFile("./public/about.html")
 

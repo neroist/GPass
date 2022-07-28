@@ -5,16 +5,25 @@
   --anchor-color: #fc0290;
 }
 
+html {
+  color-scheme: dark;
+}
+
+body { 
+  font-family: 'Open Sans'; 
+  text-align: center;
+}
+
 /* --- Anchor style ---*/
-a {
+a.nav-link {
   position: relative;
   color: var(--anchor-color);
   text-decoration: none;
 }
 
-a:hover { color: var(--anchor-color); }
+a.nav-link:hover { color: var(--anchor-color); }
 
-a::before {
+a.nav-link::before {
   content: "";
   position: absolute;
   display: block;
@@ -28,20 +37,16 @@ a::before {
   transition: transform 350ms ease-out;
 }
 
-a:hover::before { transform: scaleX(1); }
+a.nav-link:hover::before { transform: scaleX(1); }
 /* --- Anchor style ---*/
-
-body { 
-  font-family: 'Open Sans'; 
-  text-align: center;
-}
-
-html {
-  color-scheme: dark;
-}
 
 #love, #love > * {
   color: rgb(120, 120, 120);
+}
+
+#love > a {
+  color: var(--anchor-color);
+  text-decoration: none;
 }
 
 #nav-bar {
@@ -55,4 +60,10 @@ html {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+#github {
+  left: 10px;
+  top: 10px;
+  position: fixed;
 }
