@@ -8,6 +8,7 @@
   <meta name="description" content="Provides how un-guessable or unpredictible a password is.">
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
   <link href="/css/style.css" rel="stylesheet">
   <link href="/css/index.css" rel="stylesheet">
   <link href="/icons/favicon.ico" rel="icon">
@@ -16,16 +17,21 @@
   <title>GPass</title>
 </head>
 <body>
-  <a target="_blank" href="https://github.com/nonimportant/GPass" id="github">
+  <a target="_blank" href="https://github.com/neroist/GPass" id="github">
     <img src="/icons/github.png">
   </a>
 
   <h1>The password:</h1>
-  <input type="text" id="password" name="password" oninput="adapt()">
+  
+  <input type="text" id="password" name="password" oninput="adapt()" autofocus>
+  <i class="far fa-eye" id="password-toggle" onclick="toggle()"></i>
+
   <h2 id="guesses">...can be found within 0 guesses</h2>
 
+  <!-- Navigation Bar -->
+
   <div id="nav-bar">
-    <h6 id="love">Made with ❤️ with <a href="https://nim-lang.org">Nim</a></h6>
+    <h6 id="love">Made with ❤️ with <a href="https://nim-lang.org" target="_blank">Nim</a></h6>
     &nbsp;—&nbsp;
     <span id="bits">0 bits of entropy; 0 bits per character</span>
     &nbsp;—&nbsp;

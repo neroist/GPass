@@ -49,4 +49,17 @@ proc adapt {. exportc .} =
       cstring fmt"{round(strEntropy, 2)} bits of entropy; {round(charEntropy, 2)} bits per character"
     else:
       cstring "0 bits of entropy; 0 bits per character"
-  
+
+proc toggle(_: Event) {. exportc .} = 
+  ## "Show Password" button toggle
+
+  let
+    passwordToggle = document.getElementById("password-toggle")
+    password = document.getElementById("password")  
+
+  let passwordType = if password.getAttribute("type") == "text": "password"
+                     else: "text"
+
+  password.setAttribute("type", cstring passwordType)
+
+  passwordToggle.classList.toggle("fa-eye-slash")

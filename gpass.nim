@@ -17,14 +17,14 @@ router mainrouter:
     resp readFile("./static/css/" & @"filename"), "text/css;charset=utf-8"
 
   get "/icons/favicon.ico":
-    sendFile("./static/icons/favicon.ico")
+    resp readFile("./static/icons/favicon.ico"), "image/x-icon"
   get "/icons/github.png":
     resp readFile("./static/icons/github.png"), "image/png"
      
   get "/about":
     sendFile("./public/about.html")
 
-  get "/coffee":
+  get "/coffee": # * easter egg
     resp Http418
 
 when isMainModule:
@@ -34,7 +34,7 @@ when isMainModule:
 
   var server = initJester(
     mainrouter, 
-    newSettings(port = Port(getEnv("PORT").parseInt))
+    newSettings(port = Port(getEnv("PORT", "5000").parseInt))
   )
 
   server.serve()

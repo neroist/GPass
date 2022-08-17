@@ -10,3 +10,8 @@
   border-radius: 5px;
   border-color: darkgray;
 }
+
+#password-toggle {
+  cursor: pointer;
+  font-size: x-large;
+}
